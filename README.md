@@ -4,7 +4,7 @@
     * [x] Добавление блогера в группу
     * [x] Удаление блогера из поиска
   
-* [ ] тур
+* [x] тур
     * [ ] Создание с указанием даты? проведения
     * [ ] Удаление
     * [ ] Изменение
@@ -16,7 +16,7 @@
     * [ ] Изменение  
     
 
-* [ ] Создание новой группы блогеров (указываем только название)
+* [x] Создание новой группы блогеров (указываем только название)
   ```txt
   Предлагаю сделать так:
   на старнице просмотра/отбора новых блогеров 
@@ -25,7 +25,7 @@
   можно посмотреть все группы и если нужной ещё нет то в том же списке
   есть кнопка `add new`
   ```
-* [ ] Просмотр группы 
+* [x] Просмотр группы 
 * [ ] Написание сообщения и рассылка приглашений группе (на email)
 * [ ] Отправка приглашения на email одному блогеру
 
@@ -34,25 +34,26 @@
 
 ### api:
 * [ ] GET: http://host/bloggers/ - получение списка блогеров
-```json
+```json5
 {
   "bloggers": [
-    0: {
-      "id": str,
-      "name": str,
-      "email": str,
-      "avatar": "media/avatars/..." | false,
+    {
+      "id": 12345,
+      "name": "Ivanov Ivan",
+      "email": "some@email.com",
+      "avatar": "media/avatars/...", // "" if there is no avatar
       "gender": 'm'|'w',
-      "last_date_invitation": int,  
+      "last_date_invitation": 19932451325,  
       // думаю, если блогер уже в туре - присылать его не будем
       // также не будем его показывать, если он уже был приглашён в этом месяце
       "social_networks": {
-        "facebook": linkstr,
-        "instagram": linkstr,
-        ...
-      },
+        "facebook": "linkstr",
+        "instagram": "linkstr",
+        // ... There is will be more fields in the future
+      }
       
-    }
+    },
+    // ...
   ]
 }  
 ```
@@ -61,35 +62,44 @@
 * [ ] DELETE: http://host/bloggers/{blogger_id} - удаление блогера из поиска полностью
 * [ ] PATCH: http://host/bloggers/{blogger_id}/{group_id} - добавление блогера в группу
 * [ ] POST: http://host/groups/{group_id}/send_invitation - отправка письма группе блогеров 
-```json
+```json5
 {
-  "body": str,
-  "recipients": array, // ids of bloggers
+  "body": "some text",
+  "recipients": [123, 1214, 11], // ids of bloggers
+  
 }
 ```
 
 
 * [ ] POST: http://host/bloggers/{blogger_id}/send_invitation - отправка письма одному блогеру
-```json
+```json5
 {
-  "body": str,
-  "recipients": array, // ids of bloggers
+  "body": "some text",
+  "recipients": [123, 1214, 11], // ids of bloggers
+  
 }
 ```
 
 
 * [ ] GET: http://host/locations - получить места пригодные для посещения блогеров
-```json
+```json5
 // получаем следующее
 {
   "points": [
     {
-      "id": int,
-      "title": str, // например, музей
-      "description": str,
+      "id": 1234,
+      "title": "museum", // например, музей
+      "description": "some text",
     },
-    ...
+    // ...
   ]
 }
 ```
-* [ ] http://host/ - 
+* [ ] POST: http://host/groups/ - создание группы с выбранными блогерами
+```json5
+{
+  "bloggers": [123, 1214, 11], // ids of bloggers
+}
+```
+* [ ] GET: http://host/groups/{group_id}
+* [ ] 

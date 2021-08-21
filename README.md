@@ -81,7 +81,6 @@
 
 #
 ## questions:
-* date/dates/range in tours?
 * PUT or PATCH? or Post?
 
 
@@ -157,21 +156,6 @@
 ```
 
 
-* [ ] GET: http://host/events - получить места/events для посещения блогерами
-```json5
-// получаем следующее
-{
-  "points": [
-    {
-      "id": 1234,
-      "title": "museum",
-      "description": "some text",
-      "address": "Samara, some street 3",
-    },
-    // ...
-  ]
-}
-```
 * [ ] POST: http://host/groups/ - создание группы с выбранными блогерами
 ```json5
 {
@@ -184,6 +168,23 @@
 ```json5
 {
   "bloggers": [123, 1214, 11], // ids of bloggers
+}
+```
+
+
+* [ ] GET: http://host/tours - получить мероприятия для посещения блогерами
+```json5
+// получаем следующее
+{
+  "tours": [
+    {
+      "id": 1234,
+      "title": "museums tour",
+      "description": "some text",
+      "date": timestamp,
+    }
+  ]  
+  
 }
 ```
 
@@ -223,6 +224,7 @@
   ]
 }
 ```
+
 * [ ] POST: http://host/tours/{tour_id}/points/{point_id} - Добавление пункта в тур 
 ```json5
 {

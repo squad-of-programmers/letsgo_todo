@@ -29,7 +29,7 @@
 ![detail info event](http://images.vfl.ru/ii/1629503980/ddf3a8eb/35571912.jpg)
 
 ### Форма регистрации блогера, представителя СМИ
-![blogger registry](http://images.vfl.ru/ii/1629504382/291364ac/35571918.jpg)
+![blogger registry](http://images.vfl.ru/ii/1629519627/190600c7/35572362.png)
 
 ### Внешний вид личного кабинета блогера, предствителя СМИ
 ![lk blogger](http://images.vfl.ru/ii/1629503696/8fd9f087/35571905.jpg)

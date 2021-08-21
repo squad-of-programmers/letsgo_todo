@@ -106,7 +106,10 @@
       "email": "some@email.com",
       "avatar": "media/avatars/...", // "" if there is no avatar
       "gender": 'm'|'w',
-      "last_date_invitation": 19932451325,  
+      "is_archive": true/false,  
+      // если блогер отказал, то true, а false получим через месяц
+      // предлагаю также добавить фильтр на это поле
+      
       // думаю, если блогер уже в туре - присылать его не будем
       // также не будем его показывать, если он уже был приглашён в этом месяце
       "social_networks": {
@@ -121,6 +124,7 @@
 }  
 ```
   
+
 
 * [ ] DELETE: http://host/bloggers/{blogger_id}/ - удаление блогера из поиска полностью
 * [ ] PUT: http://host/groups/{group_id}/bloggers/{blogger_id}/ - добавление блогера в группу
@@ -146,7 +150,7 @@
 ```
 
 
-* [ ] GET: http://host/events - получить места для посещения блогерами
+* [ ] GET: http://host/events - получить места/events для посещения блогерами
 ```json5
 // получаем следующее
 {
@@ -177,12 +181,12 @@
 ```
 
 
-* [ ] POST: http://host/tours/ - Создание турка
+* [ ] POST: http://host/tours/ - Создание тура
 ```json5
 {
   "title": "some text",
   "description": "some text",
-  "date": "??????", // ????????
+  "date": 14351345,
   "events": [
     {
       "title": "some text",
@@ -207,7 +211,7 @@
 * [ ] PUT: http://host/tours/{tour_id}/events/{event_id} - Добавление места/пункта в тур с указанием времени
 * [ ] DELETE: http://host/tours/{tour_id}/events/{event_id} - Открепление места/пункта из тура
 
-* [ ] POST: http://host/events/ - Создание even
+* [ ] POST: http://host/events/ - Создание event
 ```json5
 {
   "title": "some text",

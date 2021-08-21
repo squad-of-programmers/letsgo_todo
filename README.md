@@ -101,14 +101,14 @@
   "bloggers": [
     {
       "id": 12345,
+      "login": "MisterIvanov67",
       "name": "Ivanov",
       "lastname": "Ivanov",
       "email": "some@email.com",
       "tel": "+78002223523",
       "avatar": "media/avatars/...", // "" if there is no avatar
       "gender": 'm'|'w',
-      ""
-      "is_archive": true/false,  
+      "is_archive": true/false, 
       // если блогер отказал, то true, а false получим через месяц
       // предлагаю также добавить фильтр на это поле
       
@@ -121,8 +121,10 @@
         },
         "instagram": {
           "link": "instagram.com/ivan",
-          "subscribers": 378
+          "subscribers": 378,
+          "posts": 343
         },
+        // данные разных соцсетей могут отличаться
         // ... There will be more fields in the future
       }
       
@@ -200,43 +202,45 @@
       "title": "some text",
       "description": "some text",
       "address": "Samara, some street 3",
-      "time": 19943523452345, 
+      "time": timestamp, 
     },
     // ...
   ]
 }
 ```
 
-* [ ] DELETE: http://host/tours/ - Удаление тура
-* [ ] PUT: http://host/tours/{tour_id} - Изменение данных тура
+* [ ] DELETE: http://host/tours/ - Удаление мероприятия
+* [ ] PUT: http://host/tours/{tour_id} - Изменение данных мероприятия
 ```json5
 {
   "title": "some text",
   "description": "some text",
-  "date": ""
+  "date": "",
+  "points": [
+    {
+      "point_id": 1,
+      "title": "выезд из департамента",
+      "time": timestamp,
+    },
+    // ...
+  ]
 }
 ```
-* [ ] PUT: http://host/tours/{tour_id}/events/{event_id} - Добавление места/пункта в тур с указанием времени
-* [ ] DELETE: http://host/tours/{tour_id}/events/{event_id} - Открепление места/пункта из тура
-
-
-
-* [ ] POST: http://host/events/ - Создание event
+* [ ] POST: http://host/tours/{tour_id}/points/{point_id} - Добавление пункта в тур 
 ```json5
 {
-  "title": "some text",
-  "description": "some text",
-  "address": "Samara, some street 3",
-  "time": 19943523452345, 
+  "title": "выезд из департамента",
+  "time": timestamp,
 }
 ```
-* [ ] DELETE: http://host/events/{event_id} - Удаление event
-* [ ] PUT: http://host/events/{event_id} - Изменение event
+* [ ] DELETE: http://host/tours/{tour_id}/points/{point_id} - Открепление пункта из тура
+
+
+* [ ] PUT: http://host/events/{point_id} - Изменение пункта
 ```json5
 {
-  "title": "some text",
-  "description": "some text",
-  "address": "Samara, some street 3",
-  "time": 19943523452345, 
+  "point_id": 1,
+  "title": "выезд из департамента",
+  "time": timestamp,
 }
 ```

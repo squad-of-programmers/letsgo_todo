@@ -91,7 +91,7 @@
 
 #
 ## api:
-* [ ] GET: http://host/bloggers/ - получение списка блогеров
+* [ ] GET: http://host/api_v1/bloggers/ - получение списка блогеров
 ```json5
 {
   "bloggers": [
@@ -132,10 +132,10 @@
   
 
 
-* [ ] DELETE: http://host/bloggers/{blogger_id}/ - удаление блогера из поиска полностью
+* [ ] DELETE: http://host/api_v1/bloggers/{blogger_id}/ - удаление блогера из поиска полностью
 
 
-* [ ] POST: http://host/bloggers/send_invitation/ - отправка письма блогерам
+* [ ] POST: http://host/api_v1/bloggers/send_invitation/ - отправка письма блогерам
 ```json5
 {
   "title": "some text",
@@ -146,7 +146,7 @@
 ```
 
 
-* [ ] GET: http://host/tours - получить мероприятия для посещения блогерами
+* [ ] GET: http://host/api_v1/tours - получить мероприятия для посещения блогерами
 ```json5
 // получаем следующее
 {
@@ -163,7 +163,7 @@
 ```
 
 
-* [ ] POST: http://host/tours/ - Создание тура
+* [ ] POST: http://host/api_v1/tours/ - Создание тура
 ```json5
 {
   "title": "some text",
@@ -181,8 +181,8 @@
 }
 ```
 
-* [ ] DELETE: http://host/tours/ - Удаление мероприятия
-* [ ] PUT: http://host/tours/{tour_id} - Изменение данных мероприятия
+* [ ] DELETE: http://host/api_v1/tours/ - Удаление мероприятия
+* [ ] PUT: http://host/api_v1/tours/{tour_id} - Изменение данных мероприятия
 ```json5
 {
   "title": "some text",
@@ -199,17 +199,17 @@
 }
 ```
 
-* [ ] POST: http://host/tours/{tour_id}/points/{point_id} - Добавление пункта в тур 
+* [ ] POST: http://host/api_v1/tours/{tour_id}/points/{point_id} - Добавление пункта в тур 
 ```json5
 {
   "title": "выезд из департамента",
   "time": timestamp,
 }
 ```
-* [ ] DELETE: http://host/tours/{tour_id}/points/{point_id} - Открепление пункта из тура
+* [ ] DELETE: http://host/api_v1/tours/{tour_id}/points/{point_id} - Открепление пункта из тура
 
 
-* [ ] PUT: http://host/events/{point_id} - Изменение пункта
+* [ ] PUT: http://host/api_v1/events/{point_id} - Изменение пункта
 ```json5
 {
   "point_id": 1,

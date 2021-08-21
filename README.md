@@ -133,41 +133,15 @@
 
 
 * [ ] DELETE: http://host/bloggers/{blogger_id}/ - удаление блогера из поиска полностью
-* [ ] PUT: http://host/groups/{group_id}/bloggers/{blogger_id}/ - добавление блогера в группу
-* [ ] POST: http://host/groups/{group_id}/send_invitation/ - отправка письма группе блогеров 
+
+
+* [ ] POST: http://host/bloggers/send_invitation/ - отправка письма блогерам
 ```json5
 {
   "title": "some text",
   "body": "some text",
   "recipients": [123, 1214, 11], // ids of bloggers
   
-}
-```
-
-
-* [ ] POST: http://host/bloggers/{blogger_id}/send_invitation/ - отправка письма одному блогеру
-```json5
-{
-  "title": "some text",
-  "body": "some text",
-  "recipients": [123, 1214, 11], // ids of bloggers
-  
-}
-```
-
-
-* [ ] POST: http://host/groups/ - создание группы с выбранными блогерами
-```json5
-{
-  "bloggers": [123, 1214, 11], // ids of bloggers
-}
-```
-
-
-* [ ] GET: http://host/groups/{group_id} - получение группы со списком блогеров
-```json5
-{
-  "bloggers": [123, 1214, 11], // ids of bloggers
 }
 ```
 

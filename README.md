@@ -102,10 +102,13 @@
   "bloggers": [
     {
       "id": 12345,
-      "name": "Ivanov Ivan",
+      "name": "Ivanov",
+      "lastname": "Ivanov",
       "email": "some@email.com",
+      "tel": "+78002223523",
       "avatar": "media/avatars/...", // "" if there is no avatar
       "gender": 'm'|'w',
+      ""
       "is_archive": true/false,  
       // если блогер отказал, то true, а false получим через месяц
       // предлагаю также добавить фильтр на это поле
@@ -113,8 +116,14 @@
       // думаю, если блогер уже в туре - присылать его не будем
       // также не будем его показывать, если он уже был приглашён в этом месяце
       "social_networks": {
-        "facebook": "link",
-        "instagram": "link",
+        "facebook": {
+          "link": "facebook.com/ivan",
+          "subscribers": 34
+        },
+        "instagram": {
+          "link": "instagram.com/ivan",
+          "subscribers": 378
+        },
         // ... There will be more fields in the future
       }
       
@@ -210,6 +219,8 @@
 ```
 * [ ] PUT: http://host/tours/{tour_id}/events/{event_id} - Добавление места/пункта в тур с указанием времени
 * [ ] DELETE: http://host/tours/{tour_id}/events/{event_id} - Открепление места/пункта из тура
+
+
 
 * [ ] POST: http://host/events/ - Создание event
 ```json5
